@@ -1,74 +1,37 @@
 #include "main.h"
-
-int _print(const char *format, va_list args);
-
-/**
- * _printf - prints output according to a format
- * @format: A string containing zero or more directives
- * Return: The number of characters printed
- */
 int _printf(const char *format, ...)
 {
+	convert_match m[] = {
+		{"%s", printf_string}, {"%c", printf_char},
+		{"%%", printf_37}
+		/*process...*/
+	};
+
 	va_list args;
-	int count = 0;
+	int i = 0, j, len = 0;
 
 	va_start(args, format);
-	count = _print(format, args);
-	va_end(args);
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+		return (-1);
 
-	return (count);
-}
-
-/**
- * _print - helper function that does the actual printing
- * @format: A string containing zero or more directives
- * @args: A list of arguments to be printed
- * Return: The number of characters printed
- */
-int _print(const char *format, va_list args)
-{
-	int i, count = 0;
-	char c, *s;
-
-	for (i = 0; format[i]; i++)
+Here:
+	while (format[i] != '\0')
 	{
-		if (format[i] == '%')
+		j = 2;
+		while (j >= 0)
 		{
-			switch (format[++i])
+			if (m[j].id[0] == format[i] && m[j].id[1] == format[i + 1])
 			{
-			case 'c':
-				c = va_arg(args, int);
-				_putchar(c);
-				count++;
-				break;
-			case 's':
-				 s = va_arg(args, char *);
-				if (s == NULL)
-				{
-					_print("(null)", NULL);
-        			count += 6;
-				}
-				else
-				{
-					for (; *s; s++)
-					{
-						_putchar(*s);
-						count++;
-					}
-				}
-				break;
-			case '%':
-				_putchar('%');
-				count++;
-				break;
-			default:
-				_putchar('%');
-				_putchar(format[i]);
-				count += 2;
+				len += m[j].f(args);
+				i = i + 2;
+				goto Here;
 			}
+			j--;
 		}
-		else
-			count += _putchar(format[i]);
+		_putchar(format[i]);
+		len++;
+		i++;
 	}
-	return (count);
+	va_end(args);
+	return (len);
 }
