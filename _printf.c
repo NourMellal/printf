@@ -1,5 +1,7 @@
 #include "main.h"
 
+int _print(const char *format, va_list args);
+
 /**
  * _printf - prints output according to a format
  * @format: A string containing zero or more directives
@@ -57,10 +59,7 @@ int _print(const char *format, va_list args)
 			}
 		}
 		else
-		{
-			_putchar(format[i]);
-			count++;
-		}
+			count += _putchar(format[i]);
 	}
 	return (count);
 }
