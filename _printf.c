@@ -24,6 +24,32 @@ int _printf(const char *format, ...)
                     _putchar(c);
                     count++;
                     break;
-			}
-			}
-	} }
+                case 's':
+                    s = va_arg(args, char *);
+                    while (*s)
+                    {
+                        _putchar(*s++);
+                        count++;
+                    }
+                    break;
+                case '%':
+                    _putchar('%');
+                    count++;
+                    break;
+                default:
+                    _putchar('%');
+                    _putchar(format[i]);
+                    count += 2;
+            }
+        }
+        else
+        {
+            _putchar(format[i]);
+            count++;
+        }
+    }
+
+    va_end(args);
+
+    return (count);
+}
