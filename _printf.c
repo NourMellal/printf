@@ -1,5 +1,20 @@
 #include "main.h"
-int _printf(const char * const format, ...)
+/**
+ * _printf - prints formatted output to stdout
+ * @format: format string to be printed
+ * @...: variable argument list
+ *
+ * This function takes a format string @format and a variable argument list
+ * @args, and prints formatted output to stdout according to the format string.
+ * The format string can contain conversion specifiers such as %s, %c, and %%,
+ * which are handled by the convert_match array of conversion specifiers and
+ * corresponding functions. If an unknown conversion specifier is encountered,
+ * the function prints the character as-is. The function returns the number of
+ * characters printed to stdout, or -1 if an error occurs.
+ *
+ * Return: number of characters printed, or -1 if an error occurs
+ */
+int _printf(const char *format, ...)
 {
 	convert_match m[] = {
 		{"%s", printf_string}, {"%c", printf_char},
