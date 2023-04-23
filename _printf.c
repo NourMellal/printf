@@ -42,10 +42,19 @@ int _print(const char *format, va_list args)
 				count++;
 				break;
 			case 's':
-				for (s = va_arg(args, char *); *s; s++)
+				 s = va_arg(args, char *);
+				if (s == NULL)
 				{
-					_putchar(*s);
-					count++;
+					_print("(null)", NULL);
+        			count += 6;
+				}
+				else
+				{
+					for (; *s; s++)
+					{
+						_putchar(*s);
+						count++;
+					}
 				}
 				break;
 			case '%':
