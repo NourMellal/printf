@@ -19,5 +19,5 @@ int print_srev(va_list args)
 		j++;
 	for (i = j - 1; i >= 0; i--)
 		_putchar(s[i]);
-	return (s[j]);
+	return (j);
 }
