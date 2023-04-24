@@ -8,6 +8,10 @@
 #include <unistd.h>
 #include <string.h>
 
+
+#define ERROR -1
+
+
 /**
  * struct format - struct for storing conversion specifiers and functions
  * @id: conversion specifier string (e.g. "%s")
@@ -23,16 +27,24 @@
  */
 typedef struct format
 {
-	char *id;
-	int (*f)();
+    char *id;
+    int (*f)();
 } convert_match;
 
 int _printf(const char *format, ...);
+
 int printf_char(va_list val);
+int printf_37(void);
+int printf_string(va_list val);
+
+int _putchar(char c);
+int _puts(char *str);
+
 int _strlen(char *s);
 int _strlenc(const char *s);
-int printf_string(va_list val);
-int _putchar(char c);
-int printf_37(void);
+void _itoa(long n, char s[]);
+void reverse_str(char s[]);
+int print_int(va_list list);
+
 
 #endif /*MAIN_H*/
