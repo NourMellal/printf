@@ -31,6 +31,21 @@ typedef struct format
 	int (*f)();
 } convert_match;
 
+/**
+ * struct flags - struct containing flags to "turn on"
+ * when a flag specifier is passed to _printf()
+ * @plus: flag for the '+' character
+ * @space: flag for the ' ' character
+ * @hash: flag for the '#' character
+ */
+typedef struct flags
+{
+	int plus;
+	int space;
+	int hash;
+} flags_t;
+
+
 int _printf(const char *format, ...);
 
 int printf_char(va_list val);
@@ -46,6 +61,7 @@ void _itoa(long n, char s[]);
 void reverse_str(char s[]);
 int print_srev(va_list args);
 int print_int(va_list list);
-
+int get_flag(char s, flags_t *f);
+int printf_rot13(va_list args);
 
 #endif /*MAIN_H*/
