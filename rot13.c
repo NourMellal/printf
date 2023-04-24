@@ -28,12 +28,12 @@ int printf_rot13(va_list args)
 				counter++;
 				k = 1;
 			}
+		}
 			if (!k)
 			{
 				_putchar(s[i]);
 				counter++;
 			}
-		}
 	}
 	return (counter);
 }
