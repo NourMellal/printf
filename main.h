@@ -44,6 +44,7 @@ int _strlen(char *s);
 int _strlenc(const char *s);
 void _itoa(long n, char s[]);
 void reverse_str(char s[]);
+int print_srev(va_list args);
 int print_int(va_list list);
 
 
