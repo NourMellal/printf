@@ -19,7 +19,8 @@ int _printf(const char *format, ...)
 	convert_match m[] = {
 		{"%s", printf_string}, {"%c", printf_char},
 		{"%%", printf_37},
-		{"%d", print_int}, {"%i", print_int}
+		{"%d", print_int}, {"%i", print_int},
+		{"%r", reverse_str},
 		/*process...*/
 	};
 
