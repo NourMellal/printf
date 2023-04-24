@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 		{"%s", printf_string}, {"%c", printf_char},
 		{"%%", printf_37},
 		{"%d", print_int}, {"%i", print_int},
-		{"%r", print_srev},{"%R", printf_rot13}
+		{"%r", print_srev}, {"%R", printf_rot13}
 		/*process...*/
 	};
 
