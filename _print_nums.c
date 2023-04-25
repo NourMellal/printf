@@ -88,3 +88,15 @@ int print_HEX(va_list list)
 	buffer[0] = 'A';
 	return (to_base_num(num, 16, buffer));
 }
+
+int print_ptr(va_list list)
+{
+	char buffer[50];
+	void *ptr = va_arg(list, void *);
+	unsigned long address = (unsigned long)ptr;
+
+	if (!ptr)
+		return(_puts("(nil)"));
+		
+	return (_puts("0x") + to_base_num(address, 16, buffer));
+}

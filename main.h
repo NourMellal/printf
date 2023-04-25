@@ -43,7 +43,8 @@ int _putchar(char c);
 int _puts(char *str);
 
 int printf_rot13(va_list args);
-int printf_pointer(va_list val);
+int print_ptr(va_list list);
+
 
 int _strlen(char *s);
 int _strlenc(const char *s);
