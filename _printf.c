@@ -23,7 +23,8 @@ int _printf(const char *format, ...)
 		{"%r", print_srev}, {"%R", printf_rot13},
 		{"%u", print_unsigned}, {"%o", print_octal},
 		{"%x", print_hex}, {"%X", print_HEX},
-		{"%p", print_ptr}, {"%b", print_binary}
+		{"%p", print_ptr}, {"%b", print_binary},
+		{"%S", print_exclusive_string}
 		/*process...*/
 	};
 
@@ -37,7 +38,7 @@ int _printf(const char *format, ...)
 Here:
 	while (format[i] != '\0')
 	{
-		j = 12;
+		j = 13;
 		while (j >= 0)
 		{
 			if (m[j].id[0] == format[i] && m[j].id[1] == format[i + 1])

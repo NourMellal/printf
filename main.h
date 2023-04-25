@@ -49,6 +49,7 @@ int printf_string(va_list val);
 int print_srev(va_list args);
 void reverse_str(char s[]);
 void print_buffer(char buffer[], int *buff_ind);
+int print_exclusive_string(va_list val);
 
 
 int _putchar(char c);
