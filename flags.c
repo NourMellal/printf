@@ -23,7 +23,7 @@ int get_flags(const char *format, int *i)
 				break;
 			}
 
-		if (FLAGS_CHAR == 0)
+		if (FLAGS_CHAR[j] == 0)
 			break;
 	}
 	*i = curr_i - 1;
