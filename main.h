@@ -31,37 +31,32 @@ typedef struct format
 	int (*f)();
 } convert_match;
 
-/**
- * struct flags - struct containing flags to "turn on"
- * when a flag specifier is passed to _printf()
- * @plus: flag for the '+' character
- * @space: flag for the ' ' character
- * @hash: flag for the '#' character
- */
-typedef struct flags
-{
-	int plus;
-	int space;
-	int hash;
-} flags_t;
-
-
 int _printf(const char *format, ...);
 
 int printf_char(va_list val);
 int printf_37(void);
 int printf_string(va_list val);
+int print_srev(va_list args);
+void reverse_str(char s[]);
 
 int _putchar(char c);
 int _puts(char *str);
 
+int printf_rot13(va_list args);
+int printf_pointer(va_list val);
+
 int _strlen(char *s);
 int _strlenc(const char *s);
 void _itoa(long n, char s[]);
-void reverse_str(char s[]);
-int print_srev(va_list args);
+
 int print_int(va_list list);
-int get_flag(char s, flags_t *f);
-int printf_rot13(va_list args);
+int to_base_num(unsigned long num, int base, char buffer[]);
+int print_hex(va_list list);
+int print_HEX(va_list list);
+int print_octal(va_list list);
+int print_unsigned(va_list list);
+
+
+
 
 #endif /*MAIN_H*/

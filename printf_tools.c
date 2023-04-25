@@ -74,3 +74,37 @@ void _itoa(long n, char s[])
 	s[i] = '\0';
 	reverse_str(s);
 }
+
+/**
+ * to_base_num - Converts an unsigned long integer to a string in the specified
+ * base and stores the result in a buffer.
+ *
+ * @num: The unsigned long integer to convert.
+ * @base: The base to convert to.
+ * @buffer: A buffer to store the resulting string.
+ *
+ * Return: The number of characters printed to the standard output stream.
+ */
+
+int to_base_num(unsigned long num, int base, char buffer[])
+{
+	int i = 0, rem;
+	char hex_case = (buffer[0] == 'A') ? 'A' : 'a';
+
+	(num == 0) && (buffer[i++] = '0');
+
+	while (num > 0)
+	{
+		rem = num % base;
+
+		if (rem < 10)
+			buffer[i++] = rem + '0';
+		else
+			buffer[i++] = rem - 10 + hex_case;
+
+		num /= base;
+	}
+	buffer[i] = '\0';
+	reverse_str(buffer);
+	return (_puts(buffer));
+}
