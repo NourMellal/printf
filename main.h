@@ -38,6 +38,8 @@ int printf_37(void);
 int printf_string(va_list val);
 int print_srev(va_list args);
 void reverse_str(char s[]);
+void print_buffer(char buffer[], int *buff_ind);
+
 
 int _putchar(char c);
 int _puts(char *str);

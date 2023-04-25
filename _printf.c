@@ -55,3 +55,18 @@ Here:
 	va_end(args);
 	return (len);
 }
+
+/**
+ * print_buffer - Writes characters from a buffer to the standard output stream.
+ *
+ * @buffer: A character array containing the characters to write.
+ * @buff_index: A pointer to an integer representing the current index in the buffer.
+ *              This value is updated to 0 after the characters are written.
+ */
+void print_buffer(char buffer[], int *buff_index)
+{
+	if (*buff_index > 0)
+		write(1, &buffer[0], *buff_index);
+
+	*buff_index = 0;
+}
