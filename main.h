@@ -11,6 +11,14 @@
 
 #define ERROR -1
 
+/* PRINTF FLAGS */
+#define MINUS 1
+#define PLUS 2
+#define ZERO 4
+#define HASH 8
+#define SPACE 16
+
+
 
 /**
  * struct format - struct for storing conversion specifiers and functions
@@ -32,6 +40,8 @@ typedef struct format
 } convert_match;
 
 int _printf(const char *format, ...);
+int get_flags(const char *format, int *i);
+
 
 int printf_char(va_list val);
 int printf_37(void);
