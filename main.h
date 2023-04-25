@@ -50,6 +50,8 @@ int print_srev(va_list args);
 void reverse_str(char s[]);
 void print_buffer(char buffer[], int *buff_ind);
 int print_exclusive_string(va_list val);
+int printf_HEX_aux(unsigned int num);
+
 
 
 int _putchar(char c);
