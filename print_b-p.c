@@ -16,3 +16,32 @@ int print_binary(va_list list)
 	return (to_base_num(num, 2, buffer));
 }
 
+/**
+ * print_ptr - Converts a void pointer to a hexadecimal string and prints it
+ * to the standard output stream.
+ *
+ * @list: A va_list containing the void pointer to print.
+ *
+ * Return: The number of characters printed to the standard output stream.
+ */
+int print_ptr(va_list list)
+{
+	char buffer[50];
+	void *ptr = va_arg(list, void *);
+	unsigned long address = (unsigned long)ptr;
+
+	if (!ptr)
+		return (_puts("(nil)"));
+
+	return (_puts("0x") + to_base_num(address, 16, buffer));
+}
+
+/**
+ * print_ptr - Converts a void pointer to a hexadecimal string and prints it
+ * to the standard output stream.
+ *
+ * @list: A va_list containing the void pointer to print.
+ *
+ * Return: The number of characters printed to the standard output stream.
+ */
+
