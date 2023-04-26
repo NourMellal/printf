@@ -1,105 +1,88 @@
-Authors
-NOUR MELLAL 
-HOUSSAM BENASSI 
+# Printf Group Project
 
-#############       ############ 		###		##				####		     ###########		 ###########		###########
-##          ##      ##					####  	##		       ##  ##			##					##						## 
-##          ##      ##					## ##   ## 		      ##	##			##					##						##
-############        ############ 		##  ##  ##			 ##########			############		############			##
-##          ##      ##           		##   ## ##			##		  ##				  ##				  ##			##
-##          ##      ##					##    #### 		   ##		   ##				  ##				  ##			##
-#############       ############  		##     ###		  ##			##	   ############		   ############			###########
+Welcome to our collaborative project between NourMellal and MAVERICK500 to create our own implementation of the printf function in C programming language.
 
+## Project Overview
 
+The goal of this project is to create a custom implementation of the printf function in C programming language. The printf function is used to print formatted output to the standard output stream. Our implementation of printf should support all the conversion specifiers and flags that are supported by the standard printf function.
 
+## Project Structure
 
+Our project contains the following files:
 
-Description
-This project is part of the ALX curriculum, and it involves creating a custom implementation of the printf function in the C programming language. The printf function is a fundamental function in the C standard library that is used to print formatted output to the console.
+- `README.md`: this file you are currently reading.
+- `_printf.c`: contains the main implementation of our printf function.
+- `_printf_37.c`: contains the implementation of the conversion specifier %.
+- `_print_nums.c`: contains the implementation of the conversion specifiers d, i, u, o, x, and X.
+- `consol.c`: contains the main function for testing our printf function.
+- `flags.c`: contains the implementation of the flags - and +.
+- `main.h`: header file that contains all the function prototypes and necessary libraries.
+- `print_b-p.c`: contains the implementation of the conversion specifiers b and p.
+- `print_exclusive.c`: contains the implementation of the conversion specifiers e, E, and f.
+- `print_srev.c`: contains the implementation of the conversion specifier r.
+- `printf_char.c`: contains the implementation of the conversion specifier c.
+- `printf_string.c`: contains the implementation of the conversion specifier s.
+- `printf_tools.c`: contains utility functions used by our printf function.
+- `rot13.c`: contains the implementation of the rot13 function used by the conversion specifier R.
 
-The goal of this project is to gain a deeper understanding of the inner workings of the printf function and to develop skills in using variadic functions and managing a large codebase.
+## Getting Started
 
-Getting Started
-To use this printf function, simply include the my_printf.h header file in your C program, and then call the my_printf function with the desired format string and arguments.
+To get started with our project, follow these steps:
 
-Here's an example usage:
-#include "main.h"
+1. Clone the project repository to your local machine using the following command:
 
-int main() {
-    int num = 42;
-    double pi = 3.14159;
-    char *str = "Hello, world!";
-    _printf("The number is %d, the string is %s, and pi is %f\n", num, str, pi);
-    return 0;
-}
-This will output: The number is 42, the string is Hello, world!, and pi is 3.141590.
+   `````
+   git clone https://github.com/NourMellal/printf.git
+   ```
 
-Supported Format Specifiers
-The printf function supports a wide range of format specifiers that allow for the formatting of output in a variety of ways. Here are the format specifiers that are supported in this implementation of printf:
+2. Change into the project directory:
 
-%d: for integers
-%s: for strings
-%f: for floats/doubles
-%b: for binary
-%u: for unsigned integers
-%o: for octal numbers
-%x: for hexadecimal numbers (lowercase)
-%X: for hexadecimal numbers (uppercase)
-%S: for non-printable characters
-%p: for pointer addresses
-%r: for reversed strings
-%R: for rot13'ed strings
+   ````
+   cd printf
+   ````
 
-Tasks
-The printf project is broken down into several tasks, each of which focuses on a specific aspect of the printf function. Here's a brief overview of the tasks that are involved in this project:
+3. Compile the project using the following command:
 
-Task 0
-Write a function that produces output according to format. This task involves implementing the basic functionality of printf, and it handles conversion specifiers c and s.
+   ````
+   gcc -Wall -Werror -Wextra -pedantic *.c -o printf
+   ````
 
-Task 1
-Handle conversion specifiers d and i. This task involves adding support for integer conversion specifiers to the printf function.
+4. Run the project:
 
-Task 2
-Create a man page for the function. This task involves writing a manual page that documents the usage and functionality of the printf function.
+   ````
+   ./printf
+   ````
 
-Task 3
-Handle conversion specifier b. This task involves adding support for binary conversion specifiers to the printf function.
+## Contribution Guidelines
 
-Task 4
-Handle conversion specifiers u, o, x, and X. This task involves adding support for unsigned integer, octal, and hexadecimal conversion specifiers to the printf function.
+We welcome contributions to our project! If you would like to contribute, please follow these guidelines:
 
-Task 5
-Use a local buffer of 1024 chars in order to call write as little as possible. This task involves optimizing the printf function to minimize the number of calls to the write function, which can improve performance.
+1. Fork the project repository to your own GitHub account.
 
-Task 6
-Handle custom conversion specifier %S. This task involves adding support for a custom conversion specifier that prints non-printable characters in a specific format.
+2. Clone your forked repository to your local machine.
 
-Task 7
-Handle conversion specifier p. This task involves adding support for pointer address conversion specifiers to the printf function.
+3. Create a new branch for your changes:
 
-Task 8
-Handle flag characters +, space, and #. This task involves adding support for flag characters that modify the formatting of the output.
+   ````
+   git checkout -b my-feature-branch
+   ````
 
-Task 9
-Handle length modifiers l and h. This task involves adding support for length modifiers that change the size of the data types that are printed by the printf function.
+4. Make your changes to the project code.
 
-Task 10
-Handle field width. This task involves adding support for specifying a minimum field width for the output.
+5. Commit your changes with a descriptive commit message:
 
-Task 11
-Handle precision. This task involves adding support for specifying the precision of floating point numbers that are printed by the printf function.
+   ````
+   git commit -m "Add new feature"
+   ````
 
-Task 12
-Handle flag character 0. This task involves adding support for a flag character that pads the output with zeros.
+6. Push your changes to your forked repository:
 
-Task 13
-Handle flag character -. This task involves adding support for a flag character that left-aligns the output.
+   ````
+   git push origin my-feature-branch
+   ````
 
-Task 14
-Handle custom conversion specifier %r. This task involves adding support for a custom conversion specifier that prints reversed strings.
+7. Create a pull request from your forked repository to our main repository.
 
-Task 15
-Handle custom conversion specifier %R. This task involves adding support for a custom conversion specifier that applies the rot13 encryption algorithm to strings.
+## Conclusion
 
-Task 16
-All the above options work well together. This task involves testing the printf function to ensure that all of the implemented features work correctly and that there are no conflicts between them.
+We hope you find our implementation of printf useful and informative. If you have any questions or feedback, please feel free to contact us. Thank you for your interest and contributions to our project!
