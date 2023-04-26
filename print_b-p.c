@@ -35,13 +35,3 @@ int print_ptr(va_list list)
 
 	return (_puts("0x") + to_base_num(address, 16, buffer));
 }
-
-/**
- * print_ptr - Converts a void pointer to a hexadecimal string and prints it
- * to the standard output stream.
- *
- * @list: A va_list containing the void pointer to print.
- *
- * Return: The number of characters printed to the standard output stream.
- */
-
