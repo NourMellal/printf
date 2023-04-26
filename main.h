@@ -49,7 +49,7 @@ int printf_string(va_list val);
 int print_srev(va_list args);
 void reverse_str(char s[]);
 void print_buffer(char buffer[], int *buff_ind);
-int print_exclusive_string(va_list val);
+int print_exclusive_string(va_list list, int field_width);
 int printf_HEX_aux(unsigned int num);
 
 
@@ -72,6 +72,7 @@ int print_HEX(va_list list);
 int print_octal(va_list list);
 int print_unsigned(va_list list);
 int print_binary(va_list list);
+
 
 
 

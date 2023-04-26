@@ -1,43 +1,36 @@
 #include "main.h"
 
 /**
- * print_exclusive_string - prints a string with non-printable characters
- * @val: the va_list containing the string to print
+ * print_exclusive_string - prints a string
+ *  with non-printable characters as hex escape sequences
+ * @list: the va_list containing the string to print
+ * @field_width: the minimum field width (ignored)
  *
  * Return: the number of characters printed
  */
-int print_exclusive_string(va_list val)
+int print_exclusive_string(va_list list, int field_width)
 {
-	char *s;
-	int i, len = 0;
-	int cast;
+	int i = 0, non_printable = 1, count = 0;
+	char *str;
+	char buffer[3];
+	(void)(field_width);
 
-	s = va_arg(val, char *);
-	if (s == NULL)
-		s = "(null)";
+	str = va_arg(list, char *);
+	if (!str)
+		str = "(null)";
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (; str[i]; i++)
 	{
-		if (s[i] < 32 || s[i] >= 127)
+		non_printable = (str[i] > 0 && str[i] < 32) || (str[i] >= 127);
+
+		if (non_printable)
 		{
-			_putchar('\\');
-			_putchar('x');
-			len = len + 2;
-			cast = s[i];
-			if (cast < 16)
-			{
-				_putchar('0');
-				len++;
-			}
-			len = len + printf_aux(cast);
+			(str[i] < 16) ? (count += _puts("\\x0")) : (count += _puts("\\x"));
+			buffer[0] = 'A';
+			count += to_base_num(str[i], 16, buffer);
 		}
 		else
-		{
-			_putchar(s[i]);
-			len++;
-		}
+			count += _putchar(str[i]);
 	}
-	return (len);
-
-
+	return (count);
 }
