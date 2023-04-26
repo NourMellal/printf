@@ -103,5 +103,3 @@ Handle custom conversion specifier %R. This task involves adding support for a c
 
 Task 16
 All the above options work well together. This task involves testing the printf function to ensure that all of the implemented features work correctly and that there are no conflicts between them.
-
-
